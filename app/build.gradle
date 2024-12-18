@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'  // Apply the Google services plugin
+}
+
+android {
+
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.e_commerce"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Enable ViewBinding (optional)
+    viewBinding {
+        enabled = true
+    }
+
+    namespace 'com.example.e_commerce'
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Updated dependencies
+    implementation 'androidx.appcompat:appcompat:1.4.1'          // Updated AppCompat
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'  // Updated ConstraintLayout
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'      // Legacy support for compatibility
+
+    // Material Desgin
+    implementation 'com.google.android.material:material:1.6.0'
+
+    // dimm
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+
+    // Charts
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // ZXing Android Embedded
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.zxing:core:3.3.0'
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+
+    implementation 'com.google.android.gms:play-services-base:18.2.0'
+
+
+    //Location APi
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'androidx.test:monitor:1.7.2'
+    implementation 'androidx.test.ext:junit:1.2.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'org.testng:testng:6.9.6'
+    implementation platform('com.google.firebase:firebase-bom:32.7.0')
+    implementation 'com.google.firebase:firebase-auth' // Firebase Authentication
+
+    implementation 'com.google.firebase:firebase-auth:21.0.1'        // Firebase Authentication
+    implementation 'com.google.firebase:firebase-database:20.0.5'    // Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-firestore:24.8.1'   // Firebase Firestore
+    implementation 'com.google.firebase:firebase-storage:20.3.0'     // Firebase Storage
+    implementation 'com.google.firebase:firebase-messaging:23.3.1'   // Firebase Cloud Messaging
+    implementation 'com.google.firebase:firebase-analytics:21.5.1'   // Firebase Analytics
+
+
+}
